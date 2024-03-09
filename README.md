@@ -47,7 +47,7 @@ pip install -r requirements.txt
 ## Создайте файл .env:
 
 ```
-FLASK_APP=opinions_app
+FLASK_APP=yacut/__init__.py
 FLASK_ENV=development
 DATABASE_URI=sqlite:///db.sqlite3
 SECRET_KEY=YOUR_SECRET_KEY
