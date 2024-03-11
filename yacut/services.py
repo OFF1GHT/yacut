@@ -20,7 +20,7 @@ class URL:
             short=short_id if short_id else self.custom_id
         ).first()
 
-    def get_short_link(self):
+    def create_short_link(self):
         if not self.url:
             raise MissingRequiredParameterError()
 

@@ -8,7 +8,7 @@ from .error_handlers import (
     MissingRequiredParameterError,
     ValidationError,
 )
-from .url_shortener import URL
+from .services import URL
 
 
 @app.route('/api/id/', methods=['POST'])
@@ -19,7 +19,7 @@ def add_url():
     try:
         short_link = URL(
             data.get('url'), data.get('custom_id')
-        ).get_short_link()
+        ).create_short_link()
     except IntegrityError:
         raise InvalidAPIUsage(
             'Предложенный вариант короткой ссылки уже существует.'
